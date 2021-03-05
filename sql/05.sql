@@ -9,3 +9,8 @@
  * HINT:
  * This can be solved using either a LEFT JOIN or the NOT IN operator.
  */
+select a.last_name, a.first_name
+from actor a
+left join customer c on c.last_name = a.last_name and a.first_name = c.first_name
+where customer_id is null 
+order by a.last_name , a.first_name
